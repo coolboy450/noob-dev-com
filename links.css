@@ -1,0 +1,48 @@
+/* links.html — แบบ C หน้าลิงก์รวม · Brand Guide v1 (dark-first) */
+
+:root{
+  --bg:#0D1117;--surface:#161B22;--border:#2A313C;--text:#E6EDF3;--muted:#8B949E;
+  --accent:#A3E635;--accent-ink:#0D1117;--pop:#F472B6;--warn:#FBBF24;--error:#F87171;
+  --shadow:none;
+  /* token คงที่ — ไม่สลับตามธีม (ไอคอนโลโก้มืดตลอด, `_` เขียวนูบเสมอ) */
+  --ink-fixed:#0D1117;--on-ink-fixed:#E6EDF3;--accent-fixed:#A3E635;
+
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
+  --r-sm:6px;--r-md:12px;--r-lg:20px;--r-pill:999px;
+  --font:"IBM Plex Sans Thai",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --t:200ms ease-out;
+}
+@media (prefers-color-scheme:light){
+  :root{
+    --bg:#FAFAF7;--surface:#FFFFFF;--border:#E4E4DE;--text:#14171C;--muted:#5E6570;
+    --accent:#4D7C0F;--accent-ink:#FFFFFF;--pop:#DB2777;--warn:#B45309;--error:#DC2626;
+    --shadow:0 1px 2px rgb(0 0 0 / .06),0 4px 16px rgb(0 0 0 / .06);
+  }
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--font);font-size:16px;line-height:1.7;background:var(--bg);color:var(--text);min-height:100vh}
+h1{font-weight:700;letter-spacing:-0.01em;line-height:1.3}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.page{max-width:480px;margin:0 auto;padding:var(--s7) var(--s4) var(--s6)}
+
+.top{text-align:center;display:grid;justify-items:center;gap:var(--s2)}
+.ava{width:64px;height:64px;border-radius:var(--r-md);background:var(--ink-fixed);border:1px solid var(--border);display:grid;place-items:center;font:600 24px/1 var(--mono);color:var(--on-ink-fixed)}
+.ava span{color:var(--accent-fixed)}
+.top h1{font:600 20px/1.3 var(--mono)}
+.top h1 span{color:var(--accent)}
+.top p{font-size:14px;color:var(--muted)}
+
+.links{list-style:none;display:grid;gap:var(--s3);margin-top:var(--s5)}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);min-height:48px;padding:var(--s3) var(--s4);border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);color:var(--text);text-decoration:none;box-shadow:var(--shadow);transition:border-color var(--t)}
+.links a:hover{border-color:var(--muted)}
+.links a.main{height:44px;min-height:44px;padding:0 20px;border-radius:var(--r-sm);background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:500}
+.arr{font-family:var(--mono);flex:0 0 auto}
+.links a:not(.main) .arr{color:var(--muted)}
+
+.safe{margin-top:var(--s5);font:400 12px/1.7 var(--mono);color:var(--muted);text-align:center}
